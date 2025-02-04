@@ -3,10 +3,9 @@
   gather_facts: no
   tasks:
     - name: Copy dockercoins.yaml on master
-      copy: src=k8s-dockercoins.yaml dest=/var/lib/jenkins owner=jenkins group=jenkins mode=0644
-      become: true
+      copy: src=k8s-dockercoins.yaml dest=/tmp owner=jenkins group=jenkins mode=0644
     - name: Sleep 30 sec
       command: sleep 30
     - name: Deploy dockercoins
-      command: kubectl apply -f k8s-dockercoins.yaml
+      command: kubectl apply -f /tmp/k8s-dockercoins.yaml
 
