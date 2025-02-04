@@ -3,7 +3,8 @@
   gather_facts: no
   tasks:
     - name: Copy dockercoins.yaml on master
-      copy: src=k8s-dockercoins.yaml dest=/home/vagrant/ owner=vagrant group=vagrant mode=0644
+      copy: src=k8s-dockercoins.yaml dest=/var/lib/jenkins owner=jenkins group=jenkins mode=0644
+      become: true
     - name: Sleep 30 sec
       command: sleep 30
     - name: Deploy dockercoins
