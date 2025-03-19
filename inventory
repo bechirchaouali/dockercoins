@@ -1,4 +1,4 @@
-control-plane	ansible_connection=local	ansible_host=192.168.56.10
+control-plane	ansible_connection=local	ansible_host=192.168.56.10  ansible_become_pass=root 
 [nodes]
-node1		ansible_host=192.168.56.11	ansible_user=vagrant
-node2		ansible_host=192.168.56.12	ansible_user=vagrant
+node1		ansible_host=192.168.56.11	ansible_user=vagrant  ansible_become_pass=root
+node2		ansible_host=192.168.56.12	ansible_user=vagrant  ansible_become_pass=root
