@@ -9,5 +9,5 @@
     - name: Deploy dockercoins
       command: kubectl apply -f /tmp/k8s-dockercoins.yaml
     - name: forward input from TCP/8000 to TCP/80 webui service
-      command: kubectl port-forward --address 0.0.0.0 --namespace=dockercoins service/webui 8000:80
+      command: kubectl port-forward --address 0.0.0.0 --namespace=dockercoins service/webui 8000:80 &
 
