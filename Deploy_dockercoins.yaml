@@ -3,7 +3,7 @@
   gather_facts: no
   tasks:
     - name: Copy dockercoins.yaml on master
-      copy: src=k8s-dockercoins.yaml dest=/tmp owner=jenkins group=jenkins mode=0644
+      copy: src=k8s-dockercoins.yaml dest=/tmp owner=ubuntu group=ubuntu mode=0644
     - name: Sleep 30 sec
       command: sleep 30
     - name: Deploy dockercoins
